@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double max = Double.NEGATIVE_INFINITY;
+
+        System.out.println("Skriv in tal (EOF för att avsluta):");
+
+        while (scanner.hasNextDouble()) {
+            double num = scanner.nextDouble();
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("Det största talet är: " + max);
+
+        scanner.close();
+    }
+}
