@@ -1,0 +1,24 @@
+import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+
+public class Main {
+    public static void main(String[] args) {
+        varning("VARNING AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    }
+
+    public static void varning(String varningstext) {
+        plinga(3);
+        JOptionPane.showMessageDialog(null, varningstext, "Varning", JOptionPane.WARNING_MESSAGE);
+    }
+
+    public static void plinga(int antal) {
+        for (int i = 0; i < antal; i++) {
+            Toolkit.getDefaultToolkit().beep();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
